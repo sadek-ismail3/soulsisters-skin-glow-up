@@ -38,13 +38,28 @@ const SoulsistersLanding = () => {
 
         {/* Logo Section */}
         <div className="text-center mb-8 animate-scale-in" style={{ animationDelay: '0.3s' }}>
-          <div className="relative inline-block">
+          <div className="relative inline-block group">
+            {/* Background glow ring */}
+            <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-30 animate-rotate-slow scale-110" />
+            
+            {/* Main logo with complex animations */}
             <img 
               src={logo} 
               alt="Soulsisters Skincare Logo" 
-              className="w-32 h-32 rounded-full mx-auto shadow-elegant hover:shadow-glow transition-all duration-500 hover:scale-105 animate-float"
+              className="w-32 h-32 rounded-full mx-auto relative z-10 shadow-elegant transition-all duration-700 
+                         animate-float-complex animate-glow-pulse
+                         group-hover:scale-110 group-hover:shadow-glow 
+                         cursor-pointer"
             />
-            <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-20 animate-shimmer" />
+            
+            {/* Shimmer overlay effect */}
+            <div className="absolute inset-0 rounded-full overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 animate-shimmer-logo w-8 h-full" />
+            </div>
+            
+            {/* Rotating border effect */}
+            <div className="absolute inset-0 rounded-full border-2 border-primary-glow/40 animate-rotate-slow scale-105" />
+            <div className="absolute inset-0 rounded-full border border-primary/20 animate-bounce-gentle scale-110" />
           </div>
         </div>
 
