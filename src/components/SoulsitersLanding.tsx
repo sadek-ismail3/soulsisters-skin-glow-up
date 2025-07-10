@@ -204,7 +204,7 @@ const SoulsistersLanding = () => {
         {/* Footer */}
         <footer className="text-center mt-12 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
           <p className="text-sm text-muted-foreground/70 font-medium">
-            © Sadek
+            © Sadek.t
           </p>
         </footer>
       </div>
