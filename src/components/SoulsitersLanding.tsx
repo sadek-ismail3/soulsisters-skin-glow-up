@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Instagram, Globe, Facebook, Youtube } from "lucide-react";
+import { Instagram, Globe, Facebook, Youtube ,} from "lucide-react";
 import heartBackground from "@/assets/heart-background.jpg";
+import { FaPinterest, FaTiktok } from "react-icons/fa";
 import logo from "@/assets/logo.png";
+
 
 const SoulsistersLanding = () => {
   return (
@@ -13,6 +15,8 @@ const SoulsistersLanding = () => {
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
       }}
+
+      
     >
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-background/30 backdrop-blur-[1px]" />
@@ -37,31 +41,34 @@ const SoulsistersLanding = () => {
         </div>
 
         {/* Logo Section */}
-        <div className="text-center mb-8 animate-scale-in" style={{ animationDelay: '0.3s' }}>
-          <div className="relative inline-block group">
-            {/* Background glow ring */}
-            <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-30 animate-rotate-slow scale-110" />
-            
-            {/* Main logo with complex animations */}
-            <img 
-              src={logo} 
-              alt="Soulsisters Skincare Logo" 
-              className="w-32 h-32 rounded-full mx-auto relative z-10 shadow-elegant transition-all duration-700 
-                         animate-float-complex animate-glow-pulse
-                         group-hover:scale-110 group-hover:shadow-glow 
-                         cursor-pointer"
-            />
-            
-            {/* Shimmer overlay effect */}
-            <div className="absolute inset-0 rounded-full overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 animate-shimmer-logo w-8 h-full" />
-            </div>
-            
-            {/* Rotating border effect */}
-            <div className="absolute inset-0 rounded-full border-2 border-primary-glow/40 animate-rotate-slow scale-105" />
-            <div className="absolute inset-0 rounded-full border border-primary/20 animate-bounce-gentle scale-110" />
-          </div>
-        </div>
+<div className="text-center mb-8 animate-scale-in" style={{ animationDelay: '0.3s' }}>
+  <div className="relative inline-block group">
+    {/* Background glow ring */}
+    <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-30 animate-rotate-slow scale-110" />
+    
+    {/* Main logo with complex animations wrapped in a link */}
+    <a href="https://soulsistersskincare.ma" target="_blank" rel="noopener noreferrer">
+      <img 
+        src={logo} 
+        alt="Soulsisters Skincare Logo" 
+        className="w-32 h-32 rounded-full mx-auto relative z-10 shadow-elegant transition-all duration-700 
+                   animate-float-complex animate-glow-pulse
+                   group-hover:scale-110 group-hover:shadow-glow 
+                   cursor-pointer"
+      />
+    </a>
+    
+    {/* Shimmer overlay effect */}
+    <div className="absolute inset-0 rounded-full overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 animate-shimmer-logo w-8 h-full" />
+    </div>
+    
+    {/* Rotating border effect */}
+    <div className="absolute inset-0 rounded-full border-2 border-primary-glow/40 animate-rotate-slow scale-105" />
+    <div className="absolute inset-0 rounded-full border border-primary/20 animate-bounce-gentle scale-110" />
+  </div>
+</div>
+
 
         {/* Brand Info */}
         <div className="text-center mb-12 space-y-4 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
@@ -69,7 +76,7 @@ const SoulsistersLanding = () => {
             SOULSISTERS SKINCARE
           </h1>
           <div className="flex items-center justify-center gap-2 text-muted-foreground">
-            <Instagram className="w-5 h-5" />
+            
             <span className="text-lg font-medium">@soulsistersskincare</span>
           </div>
         </div>
@@ -150,9 +157,7 @@ const SoulsistersLanding = () => {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3"
               >
-                <div className="w-5 h-5 flex items-center justify-center">
-                  <span className="text-sm font-bold">T</span>
-                </div>
+                <FaTiktok className="w-5 h-5" />
                 TIKTOK
               </a>
             </Button>
@@ -192,9 +197,7 @@ const SoulsistersLanding = () => {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3"
               >
-                <div className="w-5 h-5 flex items-center justify-center">
-                  <span className="text-sm font-bold">P</span>
-                </div>
+                <FaPinterest className="w-5 h-5" />
                 PINTEREST
               </a>
             </Button>
@@ -204,11 +207,13 @@ const SoulsistersLanding = () => {
         {/* Footer */}
         <footer className="text-center mt-12 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
           <p className="text-sm text-muted-foreground/70 font-medium">
-            © Sadek.t
+            © 2025, SoulSistersSkincare. Inspirer la beauté naturelle.
           </p>
         </footer>
       </div>
     </div>
+
+    
   );
 };
 
