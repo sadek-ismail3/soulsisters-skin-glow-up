@@ -103,84 +103,59 @@ const SoulsistersLanding = () => {
             </Button>
           </div>
 
-          {/* Instagram */}
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-            <Button 
-              asChild 
-              variant="social" 
-              size="lg" 
-              className="w-full text-base font-semibold"
-            >
-              <a 
-                href="https://www.instagram.com/soulsistersskincare/" 
+          {/* Premium Social Icons Row */}
+          <div
+            className="animate-fade-in-up grid grid-cols-4 gap-3 sm:gap-4 py-2"
+            style={{ animationDelay: '0.85s' }}
+          >
+            {[
+              {
+                name: 'Instagram',
+                href: 'https://www.instagram.com/soulsistersskincare/',
+                Icon: Instagram,
+                gradient: 'from-[#feda75] via-[#fa7e1e] via-40% to-[#d62976]',
+                ring: 'group-hover:shadow-[0_8px_30px_-5px_rgba(214,41,118,0.6)]',
+              },
+              {
+                name: 'Facebook',
+                href: 'https://www.facebook.com/soulsistersskincare',
+                Icon: Facebook,
+                gradient: 'from-[#0866ff] to-[#1877f2]',
+                ring: 'group-hover:shadow-[0_8px_30px_-5px_rgba(24,119,242,0.6)]',
+              },
+              {
+                name: 'TikTok',
+                href: 'https://www.tiktok.com/@soulsistersskincare',
+                Icon: FaTiktok,
+                gradient: 'from-[#25F4EE] via-[#1a1a1a] to-[#FE2C55]',
+                ring: 'group-hover:shadow-[0_8px_30px_-5px_rgba(254,44,85,0.6)]',
+              },
+              {
+                name: 'YouTube',
+                href: 'https://www.youtube.com/@soulsistersskincare',
+                Icon: Youtube,
+                gradient: 'from-[#ff0000] to-[#cc0000]',
+                ring: 'group-hover:shadow-[0_8px_30px_-5px_rgba(255,0,0,0.55)]',
+              },
+            ].map(({ name, href, Icon, gradient, ring }) => (
+              <a
+                key={name}
+                href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3"
+                aria-label={name}
+                className={`group relative flex aspect-square items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.25)] transition-all duration-500 hover:-translate-y-1 hover:scale-105 hover:border-white/40 ${ring}`}
               >
-                <Instagram className="w-5 h-5" />
-                INSTAGRAM
+                {/* Gradient brand fill on hover */}
+                <span
+                  className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
+                />
+                {/* Subtle inner highlight */}
+                <span className="absolute inset-x-2 top-1 h-1/3 rounded-t-xl bg-gradient-to-b from-white/25 to-transparent opacity-70" />
+                <Icon className="relative z-10 w-6 h-6 sm:w-7 sm:h-7 text-foreground transition-all duration-500 group-hover:text-white group-hover:scale-110 drop-shadow-sm" />
+                <span className="sr-only">{name}</span>
               </a>
-            </Button>
-          </div>
-
-          {/* Facebook */}
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
-            <Button 
-              asChild 
-              variant="social" 
-              size="lg" 
-              className="w-full text-base font-semibold"
-            >
-              <a 
-                href="https://www.facebook.com/soulsistersskincare" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3"
-              >
-                <Facebook className="w-5 h-5" />
-                FACEBOOK
-              </a>
-            </Button>
-          </div>
-
-          {/* TikTok */}
-          <div className="animate-fade-in-up" style={{ animationDelay: '1.0s' }}>
-            <Button 
-              asChild 
-              variant="social" 
-              size="lg" 
-              className="w-full text-base font-semibold"
-            >
-              <a 
-                href="https://www.tiktok.com/@soulsistersskincare" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3"
-              >
-                <FaTiktok className="w-5 h-5" />
-                TIKTOK
-              </a>
-            </Button>
-          </div>
-
-          {/* YouTube */}
-          <div className="animate-fade-in-up" style={{ animationDelay: '1.1s' }}>
-            <Button 
-              asChild 
-              variant="social" 
-              size="lg" 
-              className="w-full text-base font-semibold"
-            >
-              <a 
-                href="https://www.youtube.com/@soulsistersskincare" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3"
-              >
-                <Youtube className="w-5 h-5" />
-                YOUTUBE
-              </a>
-            </Button>
+            ))}
           </div>
 
           {/* Pinterest */}
